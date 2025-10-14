@@ -4,8 +4,9 @@
     --primary: #8A5A83;
     --secondary: #5A1D50;
     --background: #000000fc;
-    --text: #aaaaaa;
-    --text-secondary: #ebebeb;
+    --background-second: #3535358f;
+    --text: #ebebeb; 
+    --text-secondary: #aaaaaa;
 }
 
 body {
