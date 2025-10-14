@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+header {
+    width: 100%;
+    background-color: var(--primary);
+}

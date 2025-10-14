@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+:root {
+    --primary: #8A5A83;
+    --secondary: #5A1D50;
+    --background: #000000fc;
+    --text: #aaaaaa;
+    --text-secondary: #ebebeb;
+}
+
 body {
-    background-color: aqua;
+    color: var(--text);
+    background-color: var(--background);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 1180px;
 }
