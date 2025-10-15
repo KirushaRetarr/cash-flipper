@@ -7,7 +7,10 @@ export default function Header() {
   return (
     <header className="flex flex-row justify-between items-center">
       <div>
-        <Link href="/" className="flex flex-row justify-start items-center gap-[10px]">
+        <Link
+          href="/"
+          className="flex flex-row justify-start items-center gap-[10px]"
+        >
           <Image src={logo} alt="Logo" width={50} height={50} />
           <span>Cash Flipper</span>
         </Link>
@@ -25,6 +28,14 @@ export default function Header() {
         <Link href="/profile">
           <span>Профиль</span>
         </Link>
+        <div className="menu">
+          <input
+            type="checkbox"
+            id="burger-checkbox"
+            className="burger-checkbox"
+          />
+          <label htmlFor="burger-checkbox" className="burger"></label>
+        </div>
       </nav>
     </header>
   );
