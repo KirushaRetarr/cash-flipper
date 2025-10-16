@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${ubuntu.className} antialiased`}>
-        <main>
+        <main className="w-[1180px] ml-[20px] mr-[20px]">
           <Header />
           {children}
         </main>
