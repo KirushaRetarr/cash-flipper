@@ -12,3 +12,62 @@ nav a:hover {
   background-color: var(--primary);
   transition: 0.4s;
 }
+
+.menu-btn > span,
+.menu-btn > span::before,
+.menu-btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+}
+.menu-btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu-btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu-item {
+  display: block;
+  padding: 12px 24px;
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.menu-item:hover {
+  background-color: var(--primary);
+}
+
+#menu-toggle:checked ~ .menu-btn > span {
+  transform: rotate(45deg);
+}
+#menu-toggle:checked ~ .menu-btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu-toggle:checked ~ .menu-btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu-toggle:checked ~ .menu-box {
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu-btn > span,
+.menu-btn > span::before,
+.menu-btn > span::after {
+  transition-duration: .25s;
+}
+.menu-box {
+  transition-duration: .25s;
+}
+.menu-item {
+  transition-duration: .25s;
+}

@@ -11,12 +11,24 @@ export default function Header() {
       <Link href="/" className="flex flex-row justify-start items-center gap-[10px]">
         <Image src={logo} alt="Logo" width={50} height={50} />
       </Link>
-      <nav className="flex flex-row justify-center items-center gap-[30px]">
+      <nav className="flex max-[640px]:hidden flex-row justify-center items-center gap-[30px]">
         <Link href="/">Главная</Link>
         <Link href="/bets">Ставки</Link>
         <Link href="/trading">Трейдинг</Link>
         <Link href="/profile">Профиль</Link>
       </nav>
+      <div className="block sm:hidden">
+        <input id="menu-toggle" className="opacity-0" type="checkbox" />
+        <label className="menu-btn flex items-center fixed top-[20px] right-[20px] w-[26px] h-[26px] cursor-pointer z-1 " htmlFor="menu-toggle">
+          <span></span>
+        </label>
+        <ul className="menu-box fixed invisible top-0 right-0 w-[100%] h-[100%] list-none text-end bg-(--background)">
+          <Link className="menu-item mt-[60px]" href="/">Главная</Link>
+          <Link className="menu-item" href="/bets">Ставки</Link>
+          <Link className="menu-item" href="/trading">Трейдинг</Link>
+          <Link className="menu-item" href="/profile">Профиль</Link>
+        </ul>
+      </div>
     </header>
   );
 }
