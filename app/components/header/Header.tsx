@@ -15,7 +15,7 @@ export default function Header() {
         <Link href="/">Главная</Link>
         <Link href="/bets">Ставки</Link>
         <Link href="/trading">Трейдинг</Link>
-        <Link href="/profile">Профиль</Link>
+        <Link href="/login">Войти</Link>
       </nav>
       <div className="block sm:hidden">
         <input id="menu-toggle" className="opacity-0" type="checkbox" />
@@ -26,7 +26,7 @@ export default function Header() {
           <Link className="menu-item mt-[60px]" href="/">Главная</Link>
           <Link className="menu-item" href="/bets">Ставки</Link>
           <Link className="menu-item" href="/trading">Трейдинг</Link>
-          <Link className="menu-item" href="/profile">Профиль</Link>
+          <Link className="menu-item" href="/login">Войти</Link>
         </ul>
       </div>
     </header>

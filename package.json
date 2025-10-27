@@ -9,8 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@prisma/client": "^6.18.0",
+    "@types/pg": "^8.15.5",
+    "bcrypt": "^6.0.0",
     "hamburger-react": "^2.5.2",
     "next": "15.5.4",
+    "pg": "^8.16.3",
+    "prisma": "^6.18.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-icons": "^5.5.0"
@@ -18,6 +23,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/bcrypt": "^6.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
-import Header from "./components/header/Header";
+import ConditionalHeader from "./components/ConditionalHeader";
 import "./globals.css";
 
 const ubuntu = Ubuntu({
@@ -21,8 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${ubuntu.className} antialiased`}>
-        <main className="w-[1180px] ml-[20px] mr-[20px]">
-          <Header />
+        <main className="flex justify-center items-center gap-[20px] flex-col w-full max-w-6xl mx-auto px-5">
+          <ConditionalHeader />
           {children}
         </main>
       </body>
