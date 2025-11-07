@@ -8,6 +8,7 @@ export default function Reg() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [succes, setSucces] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,8 +25,7 @@ export default function Reg() {
       throw new Error('Failed to register');
     }
 
-    const data = await response.json();
-    console.log(data);
+    setSucces('Вы успешно зарегистрировались!')
   };
 
   return (
@@ -33,6 +33,9 @@ export default function Reg() {
         <header className="mb-8 text-center">
           <h1 className="text-3xl font-bold mb-2">Cash Flipper</h1>
           <p className="text-[var(--text-secondary)]">Создайте свой аккаунт</p>
+          {succes && (
+            <p className="text-green-500">{succes}</p> 
+          )}
         </header>
 
         <form onSubmit={handleSubmit} className="space-y-4">

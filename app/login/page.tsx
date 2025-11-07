@@ -6,14 +6,15 @@ import { useRouter } from 'next/navigation';
 
 export default function Auth() {
   const router = useRouter();
-  const [loginMethod, setLoginMethod] = useState<'email' | 'username'>('email');
+  const [loginMethod, setLoginMethod] = useState<'email' | 'username'> ('email');
+  const [erorr, setErorr] = useState<string | null> (null)
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Здесь будет логика отправки данных на сервер
+    setErorr(null)
 
     const response = await fetch('../api/auth', {
       method: 'POST',
@@ -26,8 +27,8 @@ export default function Auth() {
     if (response.ok) {
       router.push('/')
     } else {
-      const data = await response.json();
-      console.log(data);
+      const data = await response.json().catch(() => null);
+      setErorr(data?.message || 'Неверный логин или пароль')
     }
   };
 
@@ -36,6 +37,9 @@ export default function Auth() {
       <header className="mb-8 text-center">
         <h1 className="text-3xl font-bold mb-2">Cash Flipper</h1>
         <p className="text-[var(--text-secondary)]">Войдите в свой аккаунт</p>
+        {erorr && (
+          <p className="text-red-500">{erorr}</p> 
+        )}
       </header>
 
       <div className="mb-6 flex rounded-xl bg-[var(--secondary)] p-1">

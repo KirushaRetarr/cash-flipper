@@ -12,21 +12,16 @@ export async function GET(request: NextRequest) {
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { id: number }
 
-        const userBalance = await pool.query(
-            'SELECT * FROM user_balances WHERE user_id = $1', [decoded.id]
+        const userInfo = await pool.query(
+            'SELECT id, username, email, avatar_url, theme, language, created_at, updated_at FROM users WHERE id = $1', [decoded.id]
         )
 
-        const userBalanceHistory = await pool.query(
-            'SELECT * FROM balance_history WHERE user_id = $1', [decoded.id]
-        )
-
-        if (userBalance.rows.length === 0) {
+        if (userInfo.rows.length === 0) {
             return NextResponse.json({ message: 'Не удалось получить баланс пользователя' }, { status: 404 })
         }
         
         const response = NextResponse.json({
-            balance: userBalance.rows,
-            balanceHistory: userBalanceHistory.rows
+            user: userInfo.rows,
         }, { status: 200 })
 
         return response

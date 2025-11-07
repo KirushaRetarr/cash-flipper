@@ -1,7 +1,5 @@
 import { Pool } from 'pg';
 
-console.log('ENV PGUSER:', process.env.POSTGRES_USER);
-
 const pool = new Pool({
     user: process.env.POSTGRES_USER,
     host: process.env.POSTGRES_HOST,
